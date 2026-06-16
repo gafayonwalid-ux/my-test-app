@@ -30,9 +30,4 @@
 		"typescript": "^5.7.4",
 		"wrangler": "^4.100.0"
 	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"unrs-resolver"
-		]
-	}
 }
