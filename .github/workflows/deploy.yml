@@ -1,10 +1,21 @@
 name: Deploy to Cloudflare Workers
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+      skip_build:
+        description: 'Skip build step (use existing .open-next/)'
+        required: false
+        default: 'false'
+        type: boolean
 
 jobs:
   deploy:
