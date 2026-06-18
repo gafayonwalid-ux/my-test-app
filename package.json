@@ -3,9 +3,8 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"prisma:build": "cat prisma/schema/*.prisma > prisma/schema.prisma",
-		"prisma:generate": "pnpm prisma:build && prisma generate",
-		"prisma:dbpush": "pnpm prisma:build && prisma db push",
+		"db:generate": "prisma generate",
+		"db:push": "prisma db push",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
