@@ -3,6 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"prisma:build": "cat prisma/schema/*.prisma > prisma/schema.prisma",
+		"prisma:generate": "pnpm prisma:build && prisma generate",
+		"prisma:dbpush": "pnpm prisma:build && prisma db push",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
@@ -14,7 +17,11 @@
 	},
 	"dependencies": {
 		"@opennextjs/cloudflare": "^1.19.9",
+		"@prisma/adapter-pg": "^7.8.0",
+		"@prisma/client": "^7.8.0",
+		"dotenv": "^17.4.2",
 		"next": "16.2.6",
+		"pg": "^8.21.0",
 		"react": "^19.1.7",
 		"react-dom": "^19.1.7"
 	},
@@ -22,11 +29,14 @@
 		"@eslint/eslintrc": "^3",
 		"@tailwindcss/postcss": "^4",
 		"@types/node": "^20",
+		"@types/pg": "^8.20.0",
 		"@types/react": "^19.1.7",
 		"@types/react-dom": "^19.1.7",
 		"eslint": "^9",
 		"eslint-config-next": "16.2.6",
+		"prisma": "^7.8.0",
 		"tailwindcss": "^4",
+		"tsx": "^4.22.4",
 		"typescript": "^5.7.4",
 		"wrangler": "^4.100.0"
 	}
