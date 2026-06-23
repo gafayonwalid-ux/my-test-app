@@ -1,6 +1,11 @@
+import { fetchTodo } from "@/lib/api/crud";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+
+	const todo = await fetchTodo();
+	console.table(todo);
+
 	return (
 		<div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
 			<main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -8,6 +13,7 @@ export default function Home() {
 				<ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
 					<li className="mb-2 tracking-[-.01em]">
 						Get started by editing{" "}
+						<pre>{JSON.stringify(todo, null, 2)}</pre>
 						<code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
 							src/app/page.tsx
 						</code>
